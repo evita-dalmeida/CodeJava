@@ -83,3 +83,21 @@ public int[] middleWay(int[] a, int[] b) {
   return new int[]{a[1],b[1]};
 }
 
+//Given an array of ints, return a new array length 2 containing the first and last elements from the original array. The original array will be length 1 or more.
+
+public int[] makeEnds(int[] nums) {
+  return new int []{nums[0], nums[nums.length-1]};
+}
+
+//Given an int array length 2, return true if it contains a 2 or a 3.
+
+public boolean has23(int[] nums) {
+  return (nums[0] == 2 || nums[1] == 3) || (nums[0] == 3 || nums[1] == 2);
+}
+
+//Given an int array length 2, return true if it does not contain a 2 or 3.
+public boolean no23(int[] nums) {
+  if(nums[0] == 2 || nums[0] == 3)
+		return false;
+	return !(nums[1] == 2 || nums[1] == 3);
+}
