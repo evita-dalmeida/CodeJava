@@ -68,3 +68,37 @@ public boolean bobThere(String str) {
 //We'll say that a String is xy-balanced if for all the 'x' chars in the string, there exists a 'y' char somewhere later in the string. 
 //So "xxy" is balanced, but "xyx" is not. One 'y' can balance multiple 'x's. Return true if the given string is xy-balanced.
 
+//Given two strings, a and b, create a bigger string made of the first char of a, the first char of b, the second char of a, 
+//the second char of b, and so on. Any leftover chars go at the end of the result.
+
+public String mixString(String a, String b) {
+  StringBuilder sb = new StringBuilder();
+  int i=0, j=0;
+  for(; i<Math.min(a.length(), b.length());i++, j++){
+    sb.append(a.charAt(i));
+    sb.append(b.charAt(j));
+  }
+  while(j!=b.length()){
+    sb.append(b.charAt(j));
+    j++;
+  }
+  while(i!=a.length()){
+    sb.append(a.charAt(i));
+    i++;
+  }
+  return sb.toString();
+}
+
+//Given a string and an int n, return a string made of n repetitions of the last n characters of the string. You may assume that n is between 0 and the length of the string, inclusive.
+
+public String repeatEnd(String str, int n) {
+  int i =0;
+  StringBuilder sb = new StringBuilder();
+  String s = str.substring(str.length()-n);
+  while(i!=n){
+    sb.append(s);
+    i++;
+  }
+  return sb.toString();
+}
+
