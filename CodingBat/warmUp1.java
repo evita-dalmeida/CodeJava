@@ -231,3 +231,35 @@ public boolean stringE(String str) {
   }
   return count>=1 && count<=3;
 }
+//Given two non-negative int values, return true if they have the same last digit, such as with 27 and 57. 
+//Note that the % "mod" operator computes remainders, so 17 % 10 is 7.
+
+public boolean lastDigit(int a, int b) {
+  return (a%2==b%2);
+}
+
+//Given a string, return a new string where the last 3 chars are now in upper case. If the string has less than 3 chars, 
+//uppercase whatever is there. Note that str.toUpperCase() returns the uppercase version of a string
+
+public String endUp(String str) {
+  if(str.length()< 3) return str.toUpperCase();
+  return str.substring(0, str.length()-3) 
+  + str.substring(str.length()-3).toUpperCase();
+}
+
+
+//Given a non-empty string and an int N, return the string made starting with char 0, and then every Nth char of the string. 
+//So if N is 3, use char 0, 3, 6, ... and so on. N is 1 or more.
+
+public String everyNth(String str, int n) {
+  StringBuilder sb = new StringBuilder();
+  int j = 0;
+  for(int i = 0; i<str.length(); i++){
+    if(j ==0 || j == n){
+      sb.append(str.charAt(i));
+      j=0;
+    }
+    j++;
+  }
+  return sb.toString();
+}
