@@ -84,3 +84,26 @@ public boolean in1To10(int n, boolean outsideMode) {
     return true;
   return(outsideMode && (n<=1 || n>=10));
 }
+
+//We'll say a number is special if it is a multiple of 11 or if it is one more than a multiple of 11. 
+//Return true if the given non-negative number is special. Use the % "mod" operator -- see Introduction to Mod
+
+public boolean specialEleven(int n) {
+  return n%11 == 0 || n%11 == 1;
+}
+
+//Return true if the given non-negative number is 1 or 2 more than a multiple of 20. See also
+
+public boolean more20(int n) {
+  return n%20 == 1 || n%20 == 2;
+}
+
+//Return true if the given non-negative number is a multiple of 3 or 5, but not both. Use the % "mod" operator
+
+public boolean old35(int n) {
+  if(n%3 ==0 && n%5 == 0)
+    return false;
+  return n%3 ==0 || n%5 == 0;
+}
+
+//Return true if the given non-negative number is 1 or 2 less than a multiple of 20. So for example 38 and 39 return true, but 40 returns false.
