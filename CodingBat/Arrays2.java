@@ -67,4 +67,67 @@ public int centeredAverage(int[] nums) {
     }  
     return sum;
   }
-  
+
+//Given an array of ints, return true if the array contains no 1's and no 3's
+
+public boolean lucky13(int[] nums) {
+  for(int n : nums){
+    if(n == 1 || n == 3)
+      return false;
+  }
+  return true;
+}
+
+//Given an array of ints, return true if the sum of all the 2's in the array is exactly 8.
+
+public boolean sum28(int[] nums) {
+  int sum =0;
+  for(int n : nums)
+    if(n == 2) sum +=n;
+  return sum ==8;
+}
+
+//Given an array of ints, return true if the number of 1's is greater than the number of 4's
+
+public boolean more14(int[] nums) {
+  int ones = 0, fours = 0;
+  for(int n : nums){
+    if(n == 1) ones++;
+    if(n == 4) fours++;
+  }
+  return ones > fours;
+}
+
+//Given a number n, create and return a new int array of length n, containing the numbers 0, 1, 2, ... n-1. 
+//The given n may be 0, in which case just return a length 0 array. 
+//You do not need a separate if-statement for the length-0 case; the for-loop should naturally execute 0 times in that case, so it just works. 
+//The syntax to make a new int array is: new int[desired_length]
+
+public int[] fizzArray(int n) {
+  if (n == 0) return new int[0];
+  int[] result = new int[n];
+  for(int i = 0; i<n;i++)
+    result[i] = i;
+  return result;
+}
+
+//Given an array of ints, return true if every element is a 1 or a 4.
+
+
+//Given a number n, create and return a new string array of length n, containing the strings "0", "1" "2" .. through n-1. N may be 0, in which case just return a length 0 array. 
+//Note: String.valueOf(xxx) will make the String form of most types. The syntax to make a new string array is: new String[desired_length]
+
+public String[] fizzArray2(int n) {
+  if(n == 0) return new String[0];
+  String[] result = new String[n];
+  for(int i = 0; i<n; i++){
+    result[i] = String.valueOf(i);
+  }
+  return result;
+}
+
+//Given an array of ints, return true if it contains no 1's or it contains no 4's.
+
+//We'll say that a value is "everywhere" in an array if for every pair of adjacent elements in the array, at least one of the pair is that value. 
+//Return true if the given value is everywhere in the array.
+
