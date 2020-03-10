@@ -128,6 +128,35 @@ public String[] fizzArray2(int n) {
 
 //Given an array of ints, return true if it contains no 1's or it contains no 4's.
 
+public boolean no14(int[] nums) {
+  int one = 0, four = 0; 
+  for(int n : nums){
+    if(n == 1 ) one++;
+    if(n == 4) four++;
+  }
+  return one ==0 || four==0;
+}
+
 //We'll say that a value is "everywhere" in an array if for every pair of adjacent elements in the array, at least one of the pair is that value. 
 //Return true if the given value is everywhere in the array.
 
+public boolean isEverywhere(int[] nums, int val) {
+  for(int i =0; i<nums.length-1;i++){
+    if(nums[i] != val && nums[i + 1] != val)
+            return false;
+  }
+  return true;
+}
+
+//Given an array of ints, return true if the array contains a 2 next to a 2 or a 4 next to a 4, but not both.
+
+public boolean either24(int[] nums) {
+  boolean has22 = false, has44 = false;
+  for(int i =0; i<nums.length -1;i++){
+    if(nums[i] == 2 && nums[i+1] ==2)
+      has22 = true;
+    if(nums[i] == 4 && nums[i+1] ==4)
+      has44 = true;
+  }
+  return has22!=has44;
+}
