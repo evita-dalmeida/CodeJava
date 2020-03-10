@@ -107,3 +107,30 @@ public boolean old35(int n) {
 }
 
 //Return true if the given non-negative number is 1 or 2 less than a multiple of 20. So for example 38 and 39 return true, but 40 returns false.
+
+public boolean less20(int n) {
+  return (n+1)%20 == 0 || (n+2)%20 == 0;
+}
+
+//Given a non-negative number "num", return true if num is within 2 of a multiple of 10. Note: (a % b) is the remainder of dividing a by b, so (7 % 5) is 2.
+
+public boolean nearTen(int num) {
+  return num%10 <=2 || num%10 >= 8;
+}
+
+//Given 2 ints, a and b, return their sum. However, "teen" values in the range 13..19 inclusive, are extra lucky. So if either value is a teen, just return 19.
+
+public int teenSum(int a, int b) {
+  if( (a >=13 && a<=19) || (b >=13 && b<=19))
+    return 19;
+  return a+b;
+}
+
+//Your cell phone rings. Return true if you should answer it. Normally you answer, except in the morning you only answer if it is your mom calling. In all cases, if you are asleep, you do not answer.
+
+public boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
+  if((isMorning && !isMom) || isAsleep)
+    return false;
+  return true;
+}
+
