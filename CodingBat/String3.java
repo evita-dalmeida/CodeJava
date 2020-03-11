@@ -23,6 +23,7 @@ public int countYZ(String str) {
       while(base.charAt(i) == remove.charAt(j)){
         j++;
       }
+      
       if(j == remove.length())
           i = i+j;
       else
