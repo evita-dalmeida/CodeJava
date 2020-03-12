@@ -147,3 +147,34 @@ public int teaParty(int tea, int candy) {
   return -1;
 }
 
+//Given a string str, if the string starts with "f" return "Fizz". If the string ends with "b" return "Buzz". If both the "f" and "b" conditions are true, return "FizzBuzz". In all other cases, return the string unchanged.
+
+public String fizzString(String str) {
+  if(str.startsWith("f") && str.endsWith("b"))
+    return "FizzBuzz";
+  else if(str.startsWith("f"))
+    return "Fizz";
+  else if(str.endsWith("b"))
+    return "Buzz";
+  return str;
+}
+
+//Given an int n, return the string form of the number followed by "!". So the int 6 yields "6!". Except if the number is divisible by 3 use "Fizz" instead of the number, and if the number is divisible by 5 use "Buzz", and if divisible by both 3 and 5, use "FizzBuzz". 
+//Note: the % "mod" operator computes the remainder after division, so 23 % 10 yields 3. What will the remainder be when one number divides evenly into another?
+
+public String fizzString2(int n) {
+  String result; 
+  if(n%3 == 0 && n%5 == 0)
+    result = "FizzBuzz";
+  else if(n%3 == 0)
+    result = "Fizz";
+  else if(n%5 == 0)
+    result = "Buzz";
+  else
+    result = Integer.toString(n);
+  return result  + "!";
+}
+
+//Given three ints, a b c, return true if it is possible to add two of the ints to get the third.
+
+
