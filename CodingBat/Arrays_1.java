@@ -101,3 +101,36 @@ public boolean no23(int[] nums) {
 		return false;
 	return !(nums[1] == 2 || nums[1] == 3);
 }
+
+//Given an int array, return a new array with double the length where its last element is the same as the original array, and all the other elements are 0. 
+//The original array will be length 1 or more. Note: by default, a new int array contains all 0's.
+
+public int[] makeLast(int[] nums) {
+  int n = nums.length*2;
+  int[] result = new int[n];
+  result[n-1] = nums[nums.length-1];
+  return result;
+}
+
+//Given an int array, return true if the array contains 2 twice, or 3 twice. The array will be length 0, 1, or 2.
+
+public boolean double23(int[] nums) {
+  int two = 0, three = 0;
+  for(int n : nums){
+    if(n == 2) two++;
+    if(n == 3) three++;
+  } 
+  return two == 2 || three == 2; 
+}
+
+//Given an int array length 3, if there is a 2 in the array immediately followed by a 3, set the 3 element to 0. 
+//Return the changed array.
+
+public int[] fix23(int[] nums) {
+  for(int i = 0; i<nums.length-1; i++){
+    if(nums[i] == 2 && nums[i+1] == 3)
+      nums[i+1] = 0;
+  }
+  return nums;
+}
+
