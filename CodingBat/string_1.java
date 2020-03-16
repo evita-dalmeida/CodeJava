@@ -144,3 +144,18 @@ public String twoChar(String str, int index) {
 }
 
 //Given a string of odd length, return the string length 3 from its middle, so "Candy" yields "and". The string length will be at least 3.
+
+public String middleThree(String str) {
+  int n = (str.length()-3)/2;
+  return str.substring(n,str.length()-n);
+}
+
+//Given a string, return true if "bad" appears starting at index 0 or 1 in the string, such as with "badxxx" or "xbadxx" but not "xxbadxx". 
+//The string may be any length, including 0. Note: use .equals() to compare 2 strings.
+
+public boolean hasBad(String str) {
+  if(str.indexOf("bad") == 0 || str.indexOf("bad") == 1)
+    return true;
+  return false;
+}
+
