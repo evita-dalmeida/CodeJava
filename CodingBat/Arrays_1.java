@@ -151,3 +151,29 @@ public int[] biggerTwo(int[] a, int[] b) {
 }
 
 //Given an array of ints of even length, return a new array length 2 containing the middle two elements from the original array. The original array will be length 2 or more.
+
+public int[] makeMiddle(int[] nums) {
+  int[] result = new int[2];
+  result[0] = nums[nums.length/2-1];
+  result[1] = nums[nums.length/2];
+  return result;
+}
+
+//Given 2 int arrays, each length 2, return a new array length 4 containing all their elements.
+
+public int[] plusTwo(int[] a, int[] b) {
+  int[] result = {a[0], a[1], b[0], b[1]};
+  return result;
+}
+
+//Given an array of ints, swap the first and last elements in the array. Return the modified array. The array length will be at least 1.
+
+public int[] swapEnds(int[] nums) {
+  int temp = nums[nums.length-1];
+  nums[nums.length-1] = nums[0];
+  nums[0] = temp;
+  return nums;
+}
+
+//Given an array of ints of odd length, return a new array length 3 containing the elements from the middle of the array. The array length will be at least 3.
+
