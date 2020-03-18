@@ -177,3 +177,22 @@ public int[] swapEnds(int[] nums) {
 
 //Given an array of ints of odd length, return a new array length 3 containing the elements from the middle of the array. The array length will be at least 3.
 
+public int[] midThree(int[] nums) {
+  int n = nums.length/2 - 1;
+  return new int[]{nums[n], nums[n+1], nums[n+2]};
+}
+
+//Given an array of ints of odd length, look at the first, last, and middle values in the array and return the largest. The array length will be a least 1.
+
+public int maxTriple(int[] nums) {
+  if(nums.length == 1) return nums[0];
+  int large = nums[0]>nums[nums.length-1]?nums[0]:nums[nums.length-1];
+  return large> nums[nums.length/2]?large: nums[nums.length/2];
+}
+
+//Given an int array of any length, return a new array of its first 2 elements. If the array is smaller than length 2, use whatever elements are present.
+
+public int[] frontPiece(int[] nums) {
+  if(nums.length<=2) return nums;
+  return Arrays.copyOf(nums,2);
+}
