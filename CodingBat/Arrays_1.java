@@ -196,3 +196,38 @@ public int[] frontPiece(int[] nums) {
   if(nums.length<=2) return nums;
   return Arrays.copyOf(nums,2);
 }
+
+//We'll say that a 1 immediately followed by a 3 in an array is an "unlucky" 1. Return true if the given array contains an unlucky 1 in the first 2 or last 2 positions in the array.
+
+
+
+//Given 2 int arrays, a and b, return a new array length 2 containing, as much as will fit, the elements from a followed by the elements from b. 
+//The arrays may be any length, including 0, but there will be 2 or more elements available between the 2 arrays.
+
+public int[] make2(int[] a, int[] b) {
+  if(a.length == 0 ) return Arrays.copyOf(b,2);
+  int[] res = new int[2];
+  int i = 0;
+  while(i<a.length && i<2){
+    res[i] = a[i];
+    i++;
+  }
+  int j = 0;
+  while(j<b.length && i<2){
+    res[i] = b[j];
+    i++;
+  }
+  return res;
+}
+
+//Given 2 int arrays, a and b, of any length, return a new array with the first element of each array. If either array is length 0, ignore that array.
+
+public int[] front11(int[] a, int[] b) {
+  if(a.length == 0 && b.length == 0) return new int[0];
+  if(a.length == 0) return new int[]{b[0]};
+  if(b.length == 0) return new int[]{a[0]};
+  int[] res = new int[2]; 
+  if(a.length >=1) res[0] = a[0];
+  if(b.length >=1) res[1] = b[0];
+  return res;
+}
