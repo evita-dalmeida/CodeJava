@@ -199,3 +199,18 @@ public boolean has12(int[] nums) {
   }
   return false;
 }
+
+//Given an array of ints, return true if the array contains either 3 even or 3 odd values all next to each other.
+
+public boolean modThree(int[] nums) {
+
+  for(int i = 0; i<nums.length-2; i++){
+    if((nums[i]%2 == 0 &&  nums[i+1]%2 == 0 && nums[i+2]%2 == 0)
+    || (nums[i]%2 != 0 &&  nums[i+1]%2 != 0 && nums[i+2]%2 != 0))
+      return true;
+  }
+  return false;
+}
+
+//Given an array of ints, return true if the value 3 appears in the array exactly 3 times, and no 3's are next to each other.
+
