@@ -27,4 +27,18 @@ public List<Integer> noTeen(List<Integer> nums) {
     return nums;
   }
   
-      
+//Given a list of strings, return a list of the strings, omitting any string that contains a "z".
+
+public List<String> noZ(List<String> strings) {
+    strings.removeIf(s -> s.indexOf("z") != -1);
+    return strings;
+  }
+
+//Given a list of strings, return a list of the strings, omitting any string length 4 or more.
+
+public List<String> noLong(List<String> strings) {
+    strings.removeIf(s -> s.length() >= 4);
+    return strings;
+  }
+
+//Given a list of strings, return a list of the strings, omitting any string length 3 or 4.
