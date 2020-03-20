@@ -94,4 +94,35 @@ public int countX(String str) {
       return 1 + countHi(str.substring(2));
     return countHi(str.substring(1));
   }
-  
+
+//Given a string, compute recursively (no loops) a new string where all the lowercase 'x' chars have been changed to 'y' chars.
+
+public String changePi(String str) {
+    if(str.length() == 0)
+      return str;
+    if(str.length() >=2 && str.charAt(0) == 'p' && str.charAt(1) == 'i')
+      return "3.14" + changePi(str.substring(2));
+    return str.substring(0,1) + changePi(str.substring(1));
+    
+  }
+
+//Given a string, compute recursively a new string where all the 'x' chars have been removed.
+
+public String noX(String str) {
+    if(str.length() == 0)
+      return str;
+    if(str.charAt(0) == 'x')
+      return noX(str.substring(1));
+    return str.charAt(0) + noX(str.substring(1));
+  }
+
+//Given an array of ints, compute recursively if the array contains a 6. We'll use the convention of considering only the part of the array that begins at the given index. 
+//In this way, a recursive call can pass index+1 to move down the array. The initial call will pass in index as 0.
+
+public boolean array6(int[] nums, int index) {
+	if(index == nums.length)
+  	return false;
+  if(nums[index] == 6)
+  	return true;
+  return array6(nums, index + 1);
+}
