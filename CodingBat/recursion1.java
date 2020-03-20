@@ -67,3 +67,31 @@ public int count7(int n) {
 //Given a non-negative int n, compute recursively (no loops) the count of the occurrences of 8 as a digit, 
 //except that an 8 with another 8 immediately to its left counts double, so 8818 yields 4. Note that mod (%) by 10 yields the rightmost digit (126 % 10 is 6), while divide (/) by 10 removes the rightmost digit (126 / 10 is 12).
 
+//Given base and n that are both 1 or more, compute recursively (no loops) the value of base to the n power, so powerN(3, 2) is 9 (3 squared).
+
+public int powerN(int base, int n) {
+    if(n == 1)
+      return base;
+    return powerN( base , n-1)*base;
+  }
+
+//Given a string, compute recursively (no loops) the number of lowercase 'x' chars in the string.
+
+public int countX(String str) {
+    if(str.length()==0)
+      return 0;
+    if(str.charAt(0) == 'x')
+      return 1 + countX(str.substring(1));
+    return countX(str.substring(1));
+  }
+
+  //Given a string, compute recursively (no loops) the number of times lowercase "hi" appears in the string.
+
+  public int countHi(String str) {
+    if(str.length() == 0 || str.length() == 1)
+      return 0;
+    if(str.substring(0,2).equals("hi"))
+      return 1 + countHi(str.substring(2));
+    return countHi(str.substring(1));
+  }
+  
