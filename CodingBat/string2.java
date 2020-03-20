@@ -116,3 +116,11 @@ public String repeatFront(String str, int n) {
 }
 
 //Given two strings, word and a separator sep, return a big string made of count occurrences of the word, separated by the separator string.
+
+public String repeatSeparator(String word, String sep, int count) {;
+  if(count == 0)
+    return "";
+  if(count == 1)
+    return word;
+  return word + sep + repeatSeparator(word,sep,count-1);
+}
