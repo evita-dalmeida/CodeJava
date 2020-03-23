@@ -200,4 +200,24 @@ public int countAbc(String str) {
       return 1 + countAbc(str.substring(2));    
     return countAbc(str.substring(1));
   }
-    
+
+//Given a string, compute recursively (no loops) the number of "11" substrings in the string. The "11" substrings should not overlap.
+
+public int count11(String str) {
+    if(str.length() == 0)
+      return 0;
+    if(str.length() >=2 && str.substring(0,2).equals("11"))
+      return 1 + count11(str.substring(2)); 
+    return count11(str.substring(1));
+  }
+
+//Given a string, return recursively a "cleaned" string where adjacent chars that are the same have been reduced to a single char. So "yyzzza" yields "yza".
+
+public String stringClean(String str) {
+    if(str.length() == 0)
+      return "";
+    if(str.length() >=2 && str.charAt(0) == str.charAt(1))
+      return stringClean(str.substring(1));
+    return str.charAt(0) +stringClean(str.substring(1));
+  }
+  
