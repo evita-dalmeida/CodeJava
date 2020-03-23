@@ -176,4 +176,28 @@ public String endX(String str) {
       return endX(str.substring(1)) + str.charAt(0);
     return str.charAt(0) + endX(str.substring(1));
   }
-  
+
+//We'll say that a "pair" in a string is two instances of a char separated by a char. So "AxA" the A's make a pair. Pair's can overlap, so "AxAxA" contains 3 pairs -- 2 for A and 1 for x. 
+//Recursively compute the number of pairs in the given string.
+
+public int countPairs(String str) {
+    if(str.length() == 0 )
+      return 0;
+    if(str.length()>=3 && str.charAt(0) == str.charAt(2)){
+      return 1 + countPairs(str.substring(1));
+    } 
+    return countPairs(str.substring(1));
+  }
+
+//Count recursively the total number of "abc" and "aba" substrings that appear in the given string.
+
+public int countAbc(String str) {
+    if(str.length() == 0)
+      return 0;
+    if(str.length()>=3 && str.substring(0,3).equals("abc"))
+      return 1 + countAbc(str.substring(3));
+    if(str.length()>=3 && str.substring(0,3).equals("aba"))
+      return 1 + countAbc(str.substring(2));    
+    return countAbc(str.substring(1));
+  }
+    
