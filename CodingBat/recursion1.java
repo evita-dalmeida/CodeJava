@@ -220,4 +220,18 @@ public String stringClean(String str) {
       return stringClean(str.substring(1));
     return str.charAt(0) +stringClean(str.substring(1));
   }
-  
+
+//Given a string, compute recursively the number of times lowercase "hi" appears in the string, however do not count "hi" that have an 'x' immedately before them.
+
+public int countHi2(String str) {
+    if(str.length() == 0)
+      return 0;
+    if(str.length() >= 3 &&  str.charAt(0) == 'x' && str.charAt(1) == 'h' && str.charAt(2) == 'i')
+      return countHi2(str.substring(2));
+    if(str.length() >= 2 &&  str.charAt(0) == 'h' && str.charAt(1) == 'i')
+      return 1 + countHi2(str.substring(2));
+    return countHi2(str.substring(1));
+  }
+
+//Given a string that contains a single pair of parenthesis, compute recursively a new string made of only of the parenthesis and their contents, so "xyz(abc)123" yields "(a
+
