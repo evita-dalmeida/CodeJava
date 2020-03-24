@@ -177,4 +177,16 @@ public String fizzString2(int n) {
 
 //Given three ints, a b c, return true if it is possible to add two of the ints to get the third.
 
+public boolean twoAsOne(int a, int b, int c) {
+  if( a + b==c || a+c == b || c+b == a)
+    return true;
+  return false;
+}
 
+//Given three ints, a b c, return true if b is greater than a, and c is greater than b. However, with the exception that if "bOk" is true, b does not need to be greater than a.
+
+public boolean inOrder(int a, int b, int c, boolean bOk) {
+  if(bOk && c>b) return true;
+  if(b>a && c>b) return true;
+  return false;
+}
