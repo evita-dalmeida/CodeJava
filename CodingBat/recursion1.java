@@ -235,3 +235,18 @@ public int countHi2(String str) {
 
 //Given a string that contains a single pair of parenthesis, compute recursively a new string made of only of the parenthesis and their contents, so "xyz(abc)123" yields "(a
 
+public String parenBit(String str) {
+    int len = str.length();
+    if(str.charAt(0) != '('){
+      if(str.charAt(len-1) != ')'){
+        return parenBit(str.substring(1,len-1));
+      }
+      return parenBit(str.substring(1));
+    }
+    if(str.charAt(len-1) != ')'){
+        return parenBit(str.substring(0,len-1));
+      }
+      return str;
+  }
+
+//Given a string, return true if it is a nesting of zero or more pairs of parenthesis, like "(())" or "((()))". Suggestion: check the first and last chars, and then recur on what's inside them.
